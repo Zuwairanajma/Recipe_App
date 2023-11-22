@@ -7,6 +7,9 @@ AllCops:
 
   DisplayCopNames: true
 
+
+Lint/ScriptPermission:
+  Enabled: false
 Metrics/PerceivedComplexity:
   Enabled: false
 Metrics/CyclomaticComplexity:
