@@ -13,3 +13,633 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Container for the food list table */
+.food-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Add Food button style */
+  
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 5%;
+  }
+  
+  .add-food-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-food-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Food list table */
+  .food-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Table header */
+  .food-list-table th {
+    padding: 10px;
+    text-align: left;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Table rows */
+  .food-list-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Delete button style */
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* Style for food details */
+  .food-details {
+    margin-top: 20px;
+  }
+  
+  .food-details h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .food-details h2 {
+    font-size: 18px;
+  }
+  
+  .food-details h2 + h2 {
+    margin-top: 10px;
+  }
+  
+  /* app/assets/stylesheets/food_list.css */
+  
+  /* Container style for the form and error messages */
+  .form-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align children to the right side */
+  }
+  
+  /* Style for form labels */
+  .form-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for form fields */
+  .form-field {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+  }
+  
+  /* Style for form submit button */
+  .form-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for error messages */
+  .error-messages {
+    margin-top: 20px;
+    color: red;
+    font-size: 14px;
+  }
+  
+  .error-messages ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .error-messages li {
+    margin-bottom: 5px;
+  }
+  
+  .recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .recipe-table th,
+  .recipe-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .recipe-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .recipe-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .recipe-info {
+    color: #555;
+  }
+  
+  .recipe-total-price {
+    font-weight: bold;
+  }
+  
+  .no-recipes {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+  }
+  
+  /* Add this CSS in your food_list.css or any other appropriate stylesheet */
+  .professional-h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .shopping-summary {
+    margin-bottom: 20px;
+  }
+  
+  .shopping-summary h3 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .shopping-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .shopping-list-table th,
+  .shopping-list-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+  }
+  
+  .food-name {
+    width: 40%;
+  }
+  
+  .food-quantity,
+  .food-price,
+  .food-amount {
+    width: 20%;
+  }
+  
+  .food-quantity,
+  .food-amount {
+    text-align: center;
+  }
+  
+  /* Container for the login form */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* the login title */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* form fields */
+  .login-field {
+    margin-bottom: 10px;
+  }
+  
+  /* login form inputs */
+  .login-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  /* login form checkboxes */
+  .login-checkbox {
+    margin-right: 5px;
+  }
+  
+  /* login form checkbox labels */
+  .login-checkbox-label {
+    font-size: 14px;
+  }
+  
+  /* login form actions */
+  .login-actions {
+    margin-top: 20px;
+  }
+  
+  /* the login button */
+  .login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #45a049;
+  }
+
+  /* Style the navigation bar container */
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style the navigation bar list items */
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  /* Style the navigation bar links */
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ffc107;
+  }
+  
+  /* Style the sign-up and sign-in links for the guest user */
+  nav ul li.guest-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #ffc107;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li.guest-links a:hover {
+    background-color: #ff9800;
+  }
+  * form and error messages */
+.recipe-form-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* form labels */
+.recipe-form-label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* form fields */
+.recipe-form-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+/* form submit button */
+.recipe-form-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-form-submit:hover {
+  background-color: #45a049;
+}
+
+/* error messages */
+.recipe-error-messages {
+  margin-top: 20px;
+  color: red;
+  font-size: 14px;
+}
+
+.recipe-error-messages ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-error-messages li {
+  margin-bottom: 5px;
+}
+
+/* "Back to Recipe" link */
+.back-to-recipe {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-recipe-link {
+  font-size: 16px;
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-to-recipe-link:hover {
+  color: #45a049;
+}
+
+/* Container for the recipe details */
+.recipe-details {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* the recipe name link */
+.recipe-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.recipe-link {
+  font-size: 18px;
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.recipe-link:hover {
+  color: #45a049;
+}
+
+/* "Delete recipe" button */
+.delete-recipe-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-recipe-button:hover {
+  background-color: #c82333;
+}
+
+/* recipe description */
+.recipe-description {
+  font-size: 16px;
+}
+
+/* recipe html */
+
+/* Container for the entire content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style for notifications (e.g., success messages) */
+.notification {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style for the page title */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Container for the list of recipes */
+.recipes-list {
+  margin-bottom: 20px;
+}
+
+/* Style for the "No recipes found" message */
+.no-recipes {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Style for the "New recipe" link */
+.new-recipe-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.new-recipe-link:hover {
+  background-color: #45a049;
+}
+
+/* Style for the recipe name link */
+
+/* Container for the editing recipe page */
+.edit-recipe-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style for the editing recipe title */
+.edit-recipe-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style for the links */
+.edit-recipe-links {
+  margin-top: 20px;
+}
+
+/* Style for the individual links in the edit page */
+.edit-recipe-link {
+  font-size: 16px;
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.edit-recipe-link:hover {
+  color: #45a049;
+}
+
+/* details,, show */
+
+/* Container for the recipe details */
+.recipe-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style for the recipe details title */
+.recipe-details-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Container for each section of recipe details */
+.recipe-box {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Style for each section of recipe details */
+.recipe-details-section {
+  margin-bottom: 10px;
+}
+
+/* Style for recipe actions */
+.recipe-actions {
+  margin-top: 20px;
+}
+
+/* Style for recipe action buttons */
+.recipe-action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-action-button:hover {
+  background-color: #45a049;
+}
+
+/* Container for the shopping table */
+.shopping-table-container {
+  margin-top: 20px;
+}
+
+/* Style for the shopping table */
+.shopping-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header */
+.shopping-table th {
+  padding: 10px;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table rows */
+.shopping-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for recipe action cell */
+.recipe-action-cell {
+  text-align: center;
+}
+
+  

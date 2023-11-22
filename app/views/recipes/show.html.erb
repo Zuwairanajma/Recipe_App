@@ -1,0 +1,58 @@
+<div class="recipe-details-container">
+  <h1 class="recipe-details-title">Recipe details</h1>
+  <div class="recipe-details">
+    <h1 class="recipe-name"><%= @recipe.name %></h1>
+    <div class="recipe-box">
+      <div class="recipe-details-section">
+        <p class="recipe-detail">Preparation time: <%= @recipe.preparation_time %> min</p>
+      </div>
+      <div class="recipe-details-section">
+        <p class="recipe-detail">Cooking time: <%= @recipe.cooking_time %> min</p>
+      </div>
+      <div class="recipe-details-section">
+        <p class="recipe-detail">Steps: <%= @recipe.description %></p>
+      </div>
+    </div>
+    <% if can? :update, @recipe %>
+      <div class="recipe-actions">
+        <%= button_to(@recipe.public? ? "Make Private" : "Make Public", toggle_recipe_public_path(@recipe), method: :put, class: "recipe-action-button") %>
+        </div>
+        <div class = "btn-container"><%= link_to 'Add Ingredients', "/recipes/#{@recipe.id}/recipe_foods/new", class: 'add-food-button' %></div>
+        <div class = "btn-container"><%= link_to 'Shopping List', "/shopping_list", class: 'add-food-button' %></div>
+    <% end %>
+  </div>
+</div>
+<div class="shopping-table-container">
+  <table class="shopping-table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <% if can? :destroy, @recipe %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= link_to "#{food.name}" %></td>
+          <td><%= food.recipe_foods.select { |recipe| recipe.food_id == food.id }[0].quantity %> </td>
+          <td>
+            $<%= 
+              food.price * food.recipe_foods.select { |recipe| recipe.food_id == food.id }[0].quantity
+            %>
+          </td>
+          <% if can? :destroy, @recipe %>
+          <td>
+            <%= link_to 'Edit', "/recipes/#{@recipe.id}/recipe_foods/#{food.id}/edit" %>
+            <br>
+            <%= button_to 'Remove', recipe_recipe_food_path(@recipe, food), method: :delete %>
+          </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

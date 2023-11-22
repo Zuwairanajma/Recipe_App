@@ -1,0 +1,28 @@
+<%# <%= stylesheet_link_tag 'food_list', media: 'all' %>
+
+<h1 class="professional-h1">Public Recipes</h1>
+
+<% if @public.length > 0 %>
+  <table class="recipe-table">
+    <tr>
+      <th>Recipe Name</th>
+      <th>By</th>
+      <th>Total Food Items</th>
+      <th>Total Price</th>
+    </tr>
+    <% @public.each do |recipe| %>
+      <tr>
+        <td class="recipe-name">
+          <%= link_to recipe.name, recipe_path(recipe) %>
+        </td>
+        <td class="recipe-info">by: <%= recipe.user.name %></td>
+        <td class="recipe-info"><%= recipe.recipe_foods.length %></td>
+
+        <% total_price = recipe.recipe_foods.sum { |food| food.food.price } %>
+        <td class="recipe-total-price">$<%= total_price %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <h2 class="no-recipes">No Public Recipes</h2>
+<% end %>
