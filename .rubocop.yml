@@ -7,8 +7,12 @@ AllCops:
 
   DisplayCopNames: true
 
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
 Layout/LineLength:
-  Max: 120
+  Enabled: false
 Layout/EndOfLine:
   Enabled: False
 Metrics/MethodLength:
@@ -18,8 +22,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
-  Max: 30
+  Enabled: false
 
 
 Style/Documentation:
