@@ -9,13 +9,18 @@
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
+           <li class="nav-item">
+          <%= link_to "Foods", foods_path, class: "nav-link" %>
+        </li>
+           <li class="nav-item">
+          <%= link_to "Recipes", recipes_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Public Recipes", public_recipies_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Shopping List", shopping_list_path, class: "nav-link" %>
         </li>
-        <!-- Add more links for other pages as needed -->
       </ul>
     </div>
   </div>
@@ -32,7 +37,6 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <img src="<%= image_path('recipes.png') %>" alt="image">
-      <%# <img src="recipes.png" class="img-fluid" alt="Recipe Image"> %>
     </div>
   </div>
 </div>
