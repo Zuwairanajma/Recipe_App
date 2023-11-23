@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="<%= root_path %>">Recipe App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Foods", foods_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Recipes", recipes_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Public Recipes", public_recipies_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

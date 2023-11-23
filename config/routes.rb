@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # rubyonrails.org/routing.html
-  root 'recipes#public_recipies'
+  # root 'recipes#public_recipies'
+
+  root 'recipes#home'
 
   resources :foods, except: [:update]
   resources :recipes, except: [:update]
