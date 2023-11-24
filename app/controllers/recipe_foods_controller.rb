@@ -44,11 +44,17 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     @recipe_food = RecipeFood.includes(:recipe).find_by(id: params[:id])
-    if @recipe_food.destroy
-      flash[:notice] = 'Bravo!'
+
+    if @recipe_food
+      if @recipe_food.destroy
+        flash[:notice] = 'Bravo!'
+      else
+        flash[:alert] = 'OOPSY Daisy!'
+      end
     else
-      flash[:alert] = 'OOPSY Daisy!'
+      flash[:alert] = 'Record not found!'
     end
+
     redirect_to recipe_path(id: params[:recipe_id])
   end
 
