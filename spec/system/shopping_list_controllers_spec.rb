@@ -5,8 +5,8 @@ RSpec.describe 'General Shopping Lists', type: :system do
 
   before do
     @user = User.create(
-      name: 'Naledi',
-      email: 'naledi@test.com',
+      name: 'Juwairiyya',
+      email: 'juwairiyyasadiq@gmail.com',
       password: 'password',
       password_confirmation: 'password',
       confirmed_at: Time.now,
@@ -16,12 +16,11 @@ RSpec.describe 'General Shopping Lists', type: :system do
     sign_in @user
 
     @food = Food.create(
-      name: 'Briyani',
+      name: 'Rice',
       measurement_unit: 'kg',
       price: 10,
       quantity: 5,
       user: @user
-      # user_id: @user.id
     )
   end
 

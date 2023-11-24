@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFoodsController, type: :request do
-  let(:user) { User.new(name: 'naledi', email: 'naledi@test.com', password: 'password') }
+  let(:user) { User.new(name: 'micheal', email: 'michealdarkwar@gmail.com', password: 'password') }
   let(:recipe) do
-    Recipe.new(name: 'Briyani', preparation_time: 10, cooking_time: 20, description: 'fried rice', public: false,
+    Recipe.new(name: 'Grains', preparation_time: 10, cooking_time: 20, description: 'fried rice', public: false,
                user_id: user.id)
   end
 
@@ -27,7 +27,7 @@ RSpec.describe RecipeFoodsController, type: :request do
   end
 
   describe 'POST #create' do
-    let(:food) { Food.create(name: 'Briyani', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
+    let(:food) { Food.create(name: 'Grains', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
 
     it 'should create a new RecipeFood' do
       authenticate_user(user)
@@ -44,7 +44,7 @@ RSpec.describe RecipeFoodsController, type: :request do
   end
 
   describe 'GET #edit' do
-    let(:food) { Food.create(name: 'Briyani', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
+    let(:food) { Food.create(name: 'Grains', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
     let!(:recipe_food) { RecipeFood.create(recipe_id: recipe.id, food_id: food.id, user_id: user.id) }
 
     it 'returns a success response' do
@@ -55,7 +55,7 @@ RSpec.describe RecipeFoodsController, type: :request do
   end
 
   describe 'PUT #update' do
-    let(:food) { Food.create(name: 'Briyani', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
+    let(:food) { Food.create(name: 'Grains', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
     let!(:recipe_food) { RecipeFood.create(recipe_id: recipe.id, food_id: food.id, user_id: user.id) }
 
     it 'should update the recipe_food' do
@@ -74,7 +74,7 @@ RSpec.describe RecipeFoodsController, type: :request do
   end
 
   describe 'DELETE #destroy' do
-    let(:food) { Food.create(name: 'Briyani', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
+    let(:food) { Food.create(name: 'Grains', measurement_unit: 'units', price: 10, quantity: 10, user_id: user.id) }
     let!(:recipe_food) { RecipeFood.create(recipe_id: recipe.id, food_id: food.id, user_id: user.id) }
 
     it 'should delete the recipe_food' do

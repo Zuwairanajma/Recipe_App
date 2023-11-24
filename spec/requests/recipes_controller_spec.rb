@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RecipesController, type: :request do
-  let(:user) { User.new(name: 'Naledi', email: 'naledi@test.com', password: 'password') }
+  let(:user) { User.new(name: 'micheal', email: 'michealdarkwar@gmail.com', password: 'password') }
 
   before do
     user.skip_confirmation!
@@ -23,7 +23,7 @@ RSpec.describe RecipesController, type: :request do
 
   describe 'GET #show' do
     let(:recipe) do
-      Recipe.create(name: 'Briyani', preparation_time: 30, cooking_time: 30, description: 'Briyani', public: false,
+      Recipe.create(name: 'Grains', preparation_time: 30, cooking_time: 30, description: 'Briyani', public: false,
                     user_id: user.id)
     end
 
@@ -49,7 +49,7 @@ RSpec.describe RecipesController, type: :request do
         post recipes_path,
              params: {
                recipe: {
-                 name: 'Briyani',
+                 name: 'Grains',
                  preparation_time: 30,
                  cooking_time: 30,
                  description: 'Fried rice',
@@ -83,14 +83,14 @@ RSpec.describe RecipesController, type: :request do
 
   describe 'GET #toggle_public' do
     let!(:recipe) do
-      Recipe.create(name: 'Briyani', preparation_time: 10, cooking_time: 20, description: 'Fried rice', public: false,
+      Recipe.create(name: 'Grains', preparation_time: 10, cooking_time: 20, description: 'Fried rice', public: false,
                     user_id: user.id)
     end
   end
 
   describe 'GET #shopping_list' do
     let!(:recipe) do
-      Recipe.create(name: 'Briyani', preparation_time: 10, cooking_time: 20, description: 'Fried rice', public: false,
+      Recipe.create(name: 'Grains', preparation_time: 10, cooking_time: 20, description: 'Fried rice', public: false,
                     user_id: user.id)
     end
   end

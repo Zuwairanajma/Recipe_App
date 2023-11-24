@@ -3,8 +3,8 @@ RSpec.describe 'Recipes', type: :system do
   include Devise::Test::IntegrationHelpers
   before(:each) do
     @user = User.create(
-      name: 'Naledi',
-      email: 'naledi@test.com',
+      name: 'Juwairiyya',
+      email: 'juwairiyyasadiq@gmail.com',
       password: 'password',
       password_confirmation: 'password',
       confirmed_at: Time.now, confirmation_sent_at: Time.now
@@ -13,7 +13,7 @@ RSpec.describe 'Recipes', type: :system do
     sign_in @user
 
     @recipe = Recipe.create(
-      name: 'bryani',
+      name: 'Rice',
       preparation_time: 10,
       cooking_time: 20,
       description: 'cook it well',

@@ -5,8 +5,8 @@ RSpec.describe 'Foods', type: :system do
 
   before(:each) do
     @user = User.create(
-      name: 'Naledi',
-      email: 'naledi@test.com',
+      name: 'Juwairiyya',
+      email: 'juwairiyyasadiq@gmail.com',
       password: 'password',
       password_confirmation: 'password',
       confirmed_at: Time.now, confirmation_sent_at: Time.now
@@ -19,11 +19,8 @@ RSpec.describe 'Foods', type: :system do
       measurement_unit: 'KG',
       price: 20.00,
       quantity: 4,
-      # user_id: @user.id
       user: @user
     )
-    # sign_in @user
-    # puts "User signed in: #{user_signed_in?}"
   end
 
   describe '#index' do
