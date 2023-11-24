@@ -1,9 +1,23 @@
 <%# <%= stylesheet_link_tag 'food_list', media: 'all' %>
 
-<div class = "food-details">
-    <h1><%= @food.name %></h1>
+<div class="container mt-5">
+  <div class="food-details">
+    <h1 class="text-center mb-4 text-primary"><%= @food.name %></h1>
 
-    <h2>Measurement: <%= @food.measurement_unit %></h2>
-    <h2>Price in $: <%= @food.price %></h2>
-    <h2>Quantity: <%= @food.quantity %></h2>
+    <div class="details-item">
+      <h2>Measurement:</h2>
+      <p><%= @food.measurement_unit %></p>
+    </div>
+
+    <div class="details-item">
+      <h2>Price in $:</h2>
+      <p><%= @food.price %></p>
+    </div>
+
+    <div class="details-item">
+      <h2>Quantity:</h2>
+      <p><%= @food.quantity %></p>
+    </div>
+  </div>
 </div>
+
