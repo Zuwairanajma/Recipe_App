@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show; end
+  def show
+    return unless @user.nil? || @user == current_user
+
+    # Handle sign-out scenario
+    redirect_to new_user_registration_path, notice: 'Signed out successfully.'
+  end
 
   # GET /users/new
   def new
@@ -59,7 +64,13 @@ class UsersController < ApplicationController
 
   # Share common setup or constraints.
   def set_user
-    @user = User.find(params[:id])
+    if params[:id] == 'sign_out'
+      # No need to find a user when signing out
+      sign_out(current_user) if current_user
+      @user = nil
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   # Only allow trusted parameters.

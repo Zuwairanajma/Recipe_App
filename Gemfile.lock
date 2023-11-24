@@ -78,7 +78,7 @@ GEM
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.15.0)
+    autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -91,7 +91,7 @@ GEM
       popper_js (>= 1.16.1, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
-    cancancan (3.0.2)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -162,7 +162,7 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
-    net-imap (0.4.5)
+    net-imap (0.4.6)
       date
       net-protocol
     net-pop (0.1.2)
