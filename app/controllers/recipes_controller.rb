@@ -17,9 +17,11 @@ class RecipesController < ApplicationController
 
   def edit; end
 
+
   def home
     # This action will be used to render a welcome page
   end
+
 
   def toggle_public
     @recipe = Recipe.find(params[:id])
