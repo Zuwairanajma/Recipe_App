@@ -119,7 +119,11 @@ rubocop -A
 - Twitter: [@SadiqJuwairiyya](https://twitter.com/SadiqJuwairiyya)
 - LinkedIn: [Zuwaira Sadiq](https://www.linkedin.com/in/zuwaira-sadiq-566b891b0?)
 
+👤 **Michael Darkwah**
 
+- GitHub: [@Mike47ip](https://github.com/Mike47ip)
+- Twitter: [@ip_mikee](https://twitter.com/ip_mikee)
+- LinkedIn: [Michael Darkwah](https://www.linkedin.com/in/michael-darkwah-81a039141/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
